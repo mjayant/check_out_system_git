@@ -5,7 +5,7 @@ Summary
 ===========
 
 This repository contains flask server and check out system code.
-User can add products in cart and system will show total bill with discount (apply code) and without  discount.
+Users can add products in cart and the system will show the total bill with discount (apply code) and without  discount.
 There are 4 API 
 1) /add_product
 2) /add_product_in_cart
@@ -19,31 +19,31 @@ Below is explanation of each API
 	steps to add product :
 		a) Run server
 		b) Hit url http://127.0.0.1:5000/add_product
-		c) Once you hit url , you will see "Add New Product" page with three field Product Name , Product Code , Product price.
-		d) All three fields are mandatory . If you skip value of any field system won't allow to save product .
-		e) It also check for valid value of Product price , it allow only int and float value .If you give any other value alert will pop up.
+		c) Once you hit url , you will see "Add New Product" page with three fields Product Name , Product Code , Product price.
+		d) All three fields are mandatory . If you skip the value of any field system won't allow you to save product .
+		e) It also checks for valid value of Product price , it allows only int and float value .If you give any other value, an alert will pop up.
 		f) You can give any value for Product Price and Product Code.
-		g) Once you give valid value , it will save in DB and will redirect to message "successfully created!"
+		g) Once you give a valid value , it will save in DB and will redirect to the message "successfully created!"
 
 2) /add_product_in_cart :
 		a) Run server
 		b) Hit url http://127.0.0.1:5000/add_product_in_cart
 		c) Once you hit url , you will see add_product_in_cart form with 4 column(Product Name,	Product Code, Unit Price, Quantity) and two buttons (submit and Get Bill)
-		e) You can give value only for Quantity field and for remaining three filed shows only product information. Form will be look like below 
+		e) You can give value only for Quantity field and for remaining three field shows only product information. Form will be look like below 
 		
 		Product Name	Product Code	Unit Price	Quantity
 
-			Chai	CH1	         $ 3.11	        <Input> 
-			Coffee	CF1	         $ 11.23        <Input> 
-			Milk	MK1	         $ 4.75         <Input>
-			Oatmeal	OM1	         $ 3.69         <Input>
-			Apples	AP1	         $ 6            <Input>
+			Chai	CH1	         $ 3.11	        <Input> 
+			Coffee	CF1	         $ 11.23        <Input> 
+			Milk	MK1	         $ 4.75         <Input>
+			Oatmeal	OM1	         $ 3.69         <Input>
+			Apples	AP1	         $ 6            <Input>
 		
 		f) If you want to add item in cart like as below:
 			CH1, AP1, AP1, AP1, MK1
 		then you need to give 1 for CH1 Quantity input field , 3 for AP1 Quantity input field and 1 for MK1 Quantity input field
-		If you are in between of shopping but you want to see your bill then you need to click on get bill button ,system will calculate Total bill with applying code 
-		and format of output will be like in same form.
+		If you are in between shopping but you want to see your bill then you need to click on the get bill button ,the system will calculate Total bill with applying code 
+		and format of output will be like in the same form.
 		
 						
 					Product : CH1	Price : 3.11
@@ -55,8 +55,8 @@ Below is explanation of each API
 					Total discount amount : -9.25
 
 					Total Bill 16.61
-		g) There are multiple validation for this form . You need give quantity for atleast one product , it will allow to you only for integer value . You can't give text or alphanumeric value
-		h) Once you are done with shopping you can click on submit button , it will show bill in same format as above but it will redirect to another page.
+		g) There are multiple validations for this form . You need to give quantity for at least one product , it will allow you only for integer value . You can't give text or alphanumeric value
+		h) Once you are done with shopping you can click on the submit button , it will show the bill in the same format as above but it will redirect to another page.
 		
 
 3) /show_product
@@ -66,7 +66,7 @@ Below is explanation of each API
 4) /delete
 		a) Run server
 		b) Hit url http://127.0.0.1:5000/delete/<prd_cd> and hit enter.
-		c) After deleting product after deleting product , it show message "successfully deleted!"
+		c) After deleting product after deleting product , it shows message "successfully deleted!"
 		d) If there is not any product is exist with <prd_cd> , then it will show message "Error deleting #test"
 
 
@@ -76,40 +76,40 @@ Steps to setup:
 install Python3.7 and Docker in your system .
 1) Clone the repository:
 
-    - git clone https://github.com/mjayant/check_out_system_git.git
+    - git clone https://github.com/mjayant/check_out_system_git.git
 
 To run code in docker container please follow below steps-
 -------------------
 
 i) Build the docker image
 
-    -  docker  build -t checkout_sys_image .
+    -  docker  build -t checkout_sys_image .
 
-    Note: Navigate to src folder then execute above command.
+    Note: Navigate to src folder then execute above command.
 
 
 ii) Run the container:
 
-    - docker run --rm -t -p 5000:5000 checkout_sys_image
+    - docker run --rm -t -p 5000:5000 checkout_sys_image
 
-    Note: Please check proxy if you are in secured connection.
-    Now, container is up and running.
+    Note: Please check the proxy if you are in secured connection.
+    Now, the container is up and running.
 
 Run flask server in local system, this is only for local not for docker
 ------------------
 
 i) Navigate to src folder and execute below command-
 
-    - pip3 install -r requirements.txt
+    - pip3 install -r requirements.txt
 
 ii) Start the development server
 
-    - python3 <to_Do>
+    - python3 <to_Do>
 
 
 Open browser and type the below url:
 
-    - http://127.0.0.1:5000/<api>
+    - http://127.0.0.1:5000/<api>
 
 
 
