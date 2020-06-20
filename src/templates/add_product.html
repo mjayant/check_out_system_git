@@ -1,0 +1,66 @@
+        {% extends 'base.html' %}
+{% block content %}
+<h1>{% block title %} Add New Product {% endblock %}</h1>
+<script src="{{url_for('static', filename='JS/jquery.min.js')}}"></script>
+<script type="text/javascript">
+        $(document).ready(function(){
+        	function validate(values) {
+        		var flag = true;
+        		for (var key in values) {
+						console.log(values[key]);
+						if (values[key] === undefined) {
+							flag = false;
+							continue;
+						}
+						if(isNaN(Number(values))) {
+							flag = false;
+							break;
+						}
+					}
+					if (Object.keys(values).length === 0) {
+						alert('Please enter atleast one input field');
+						return false;
+					} else if (!flag) {
+						alert('provide valid input data');
+						return false;
+					}
+				return flag;
+        	}
+
+        	$('#add_prd_frm').submit(function(event) {
+        	var $inputs = $('#prd_price :input');
+        	        val = document.getElementById("prd_price").value ;
+				if(!validate(val)) {
+						return false;
+					}
+        	})});
+
+    </script>
+
+<form method="post" id="add_prd_frm">
+    <div class="form-group">
+        <label for="ProductName">Product Name</label>
+        <input type="text" name="prd_name" required="required"
+               placeholder="Product Name" class="form-control"
+               value="{{ request.form['product_name'] }}"/>
+    </div>
+
+    <div class="form-group">
+        <label for="ProductCode">Product Code</label>
+                <input type="text" name="prd_code" required="required"
+               placeholder="Product ID" class="form-control"
+               value="{{ request.form['product_id'] }}"/>
+    </div>
+
+    <div class="form-group">
+        <label for="ProductPrice">Product Price</label>
+           <input type="text" name="prd_price" id="prd_price" required="required"
+               placeholder="Product Price" class="form-control"
+               value="{{ request.form['price'] }}"/>
+    </div>
+
+    <div class="form-group">
+        <button type="submit"  id="submit_button_add_prd" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+{% endblock %}

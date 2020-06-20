@@ -1,0 +1,32 @@
+
+{% block content %}
+<table align="center" cellpadding="2" cellspacing="2" border="0">
+   {% for key, value in total_item_dict.items() %}
+
+    <tr>
+      <th>Product : {{key}}</th>
+      <td>Price   : {{value}}</td>
+    </tr>
+
+    {% endfor %}
+  </table>
+
+        <h2 align="center">Total Bill without discount : {{total_price }}</h2>
+
+<table align="center" cellpadding="2" cellspacing="2" border="0">
+
+    {% for key, value in apply_cd_dict.items() %}
+    <tr>
+      <th>Applied Code   : {{key}}</th>
+      <td>Discount Price : {{value}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+
+
+        <h2 align="center">Total discount amount : {{disc_price }}</h2>
+
+
+
+        <h1 align="center">{% block title %}Total Bill {% endblock %} {{final_price }}</h1>
+{% endblock %}

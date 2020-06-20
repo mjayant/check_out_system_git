@@ -1,0 +1,141 @@
+
+{% block content %}
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+	<script src="{{url_for('static', filename='JS/jquery.min.js')}}"></script>
+
+	    <script type="text/javascript">
+        $(document).ready(function(){
+        	function validate(values) {
+        		var flag = true;
+        		for (var key in values) {
+						console.log(values[key]);
+						if (values[key] === undefined) {
+							flag = false;
+							continue;
+						}
+						if(isNaN(Number(values[key]))) {
+							flag = false;
+							break;
+						}
+					}
+					if (Object.keys(values).length === 0) {
+						alert('Please enter atleast one input field');
+						return false;
+					} else if (!flag) {
+						alert('provide valid input data');
+						return false;
+					}
+				return flag;
+        	}
+
+        	$('#add_cart_form').submit(function(event) {
+        	var $inputs = $('#add_cart_form :input');
+					var values = {};
+					$inputs.each(function() {
+						console.log($(this).val());
+						if($(this).val() !== '') {
+						values[this.name] = $(this).val();
+						}
+					});
+				if(!validate(values)) {
+						return false;
+					}
+        	});
+            $("#get_button").click(function(event){
+				var flag = true;
+            	event.preventDefault();
+					var $inputs = $('#add_cart_form :input');
+					var values = {};
+					$inputs.each(function() {
+						console.log($(this).val());
+						if($(this).val() !== '') {
+						values[this.name] = $(this).val();
+						}
+					});
+					if(!validate(values)) {
+						return false;
+					}
+					console.log(values);
+					$('#result_div_id').html('sending..');
+					$.ajax({
+						url: '/get_bill',
+						type: 'post',
+						data: JSON.stringify(values),
+						success: function (data) {
+							$('#result_div_id').html(data.toString());
+						},
+						    error: function (event,xhr,options,exc) {
+        							console.log("ERROR");
+        							console.log(exc);
+    								},
+							//dataType: 'json',
+							contentType: 'application/json;charset=UTF-8',
+					});
+					return false;
+            });
+        });
+
+
+    </script>
+
+	<title>Shopping Cart</title>
+</head>
+<body>
+	<div>
+		{% with messages = get_flashed_messages() %}
+		  {% if messages %}
+			<ul class=flashes>
+			{% for message in messages %}
+			  <li>{{ message }}</li>
+			{% endfor %}
+			</ul>
+		  {% endif %}
+		{% endwith %}
+	</div>
+<form method="post" id="add_cart_form" name="add_cart_form">
+	<div id="shopping-cart">
+		<div class="txt-heading">Shopping Cart</div>
+
+			<table class="tbl-cart" cellpadding="10" cellspacing="1">
+			<tbody>
+				<tr>
+					<th style="text-align:left;">Product Name</th>
+					<th style="text-align:left;">Product Code</th>
+					<th style="text-align:left;" width="10%">Unit Price</th>
+                    <th style="text-align:left;" width="5%">Quantity</th>
+				</tr>
+				{% for item in context %}
+					<tr>
+						<td>{{ item.product_name}}</td>
+						<td style="text-align:left;">{{ item.product_code }}</td>
+						<td  style="text-align:left;">$ {{ item.price }}</td>
+						<td  style="text-align:left;">
+                            <input type="text" name="prd_quantity___{{item.product_code}}___{{ item.price }}"
+                                placeholder="Quantity" class="form-control"
+                                value="{{ request.form['product_id'] }}"/>
+                        </td>
+					</tr>
+				{% endfor %}
+			</tbody>
+			</table>
+
+	</div>
+    <div class="container">
+		<div class="vertical-center">
+        <button  class ="btn btn-primary" id="submit" type="submit">Submit</button>
+
+		<button id="get_button" name="get_button">Get Bill</button>
+		</div>
+	</div>
+</form>
+</body>
+
+
+
+</div>
+		<div id="result_div_id" class="form-group">
+	</div>
+</html>
+{% endblock %}
