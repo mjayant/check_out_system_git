@@ -15,8 +15,8 @@ There are 4 API
 Below is explanation of each API
 
 1) /add_product :
-	This API is for adding products 
-	steps to add product :
+	This API is for adding products.
+	Steps to add product :
 		a) Run server
 		b) Hit url http://127.0.0.1:5000/add_product
 		c) Once you hit url , you will see "Add New Product" page with three fields Product Name , Product Code , Product price.
