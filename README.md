@@ -17,7 +17,7 @@ Below is explanation of each API
 1) /add_product :
 	This API is for adding products 
 	steps to add product :
-		a) Run server
+		*) Run server
 		b) Hit url http://127.0.0.1:5000/add_product
 		c) Once you hit url , you will see "Add New Product" page with three fields Product Name , Product Code , Product price.
 		d) All three fields are mandatory . If you skip the value of any field system won't allow you to save product .
