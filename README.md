@@ -14,6 +14,7 @@ There are 4 API
 
 Below is explanation of each API.
 We can redirect to each api from home page as well i.e  http://127.0.0.1:5000 .
+Each page has link for home page .
 
 1) /add_product :
 	This API is for adding products.
