@@ -83,7 +83,7 @@ install Python3.7 and Docker in your system .
 To run code in docker container please follow below steps-
 -------------------
 
-i) Build the docker image
+i) Build the docker image.
 	Note: Before running below comand , make sure you are in parent dir of src folder .
 
     -   docker build -t <image_name:tag> -f src/Dockerfile .
