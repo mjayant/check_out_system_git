@@ -83,7 +83,7 @@ To run code in docker container please follow below steps-
 
 i) Build the docker image
 
-    -   docker build -t <image_name:tag> -f .\src\Dockerfile .
+    -   docker build -t <image_name:tag> -f src/Dockerfile .
 
     Note: Navigate to parent  folder i.e checkout_system_git then execute above command.
 
@@ -104,7 +104,7 @@ i) Navigate to src folder and execute below command-
 
 ii) Start the development server
 
-    - python3 <to_Do>
+    - python app.py
 
 
 Open browser and type the below url:
@@ -122,7 +122,7 @@ Follow below step:
 3) run command: docker exec -it <container_id> pytest -s -v
 
 Or you can test locally 
-1) Navigate parent folder i.e check_out_system_git or <other_folder_name>(if you have cloned using this command: git clone https://github.com/mjayant/check_out_system_git.git <other_folder_name>
+1) Navigate parent folder i.e check_out_system_git or <other_folder_name>(if you have cloned using this command: git clone https://github.com/mjayant/check_out_system_git.git <other_folder_name>)
 2) Start server using: python src/app.py
 3)  Then run command : pytest -s -v
 
