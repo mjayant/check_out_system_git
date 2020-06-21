@@ -83,14 +83,14 @@ To run code in docker container please follow below steps-
 
 i) Build the docker image
 
-    -  docker  build -t checkout_sys_image .
+    -   docker build -t <image_name:tag> -f .\src\Dockerfile .
 
-    Note: Navigate to src folder then execute above command.
+    Note: Navigate to parent  folder i.e checkout_system_git then execute above command.
 
 
 ii) Run the container:
 
-    - docker run --rm -t -p 5000:5000 checkout_sys_image
+    - docker run --rm -t -p 5000:5000 <image_name:tag>
 
     Note: Please check the proxy if you are in secured connection.
     Now, the container is up and running.
