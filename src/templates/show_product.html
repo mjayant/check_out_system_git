@@ -3,6 +3,11 @@
 <h>{% block title %}Available  Products {% endblock %}</h>
    <body>
       <table border = 1 class="table table-striped">
+         <tr>
+					<th style="text-align:left;">Product Code</th>
+					<th style="text-align:left;">Product Name</th>
+					<th style="text-align:left;" width="10%">Unit Price</th>
+				</tr>
          {% for item in context %}
             <tr>
                <td> {{ item.product_code }} </td>
