@@ -83,7 +83,7 @@ To run code in docker container please follow below steps-
 
 i) Build the docker image
 
-    -   docker build -t <image_name:tag> -f .\src\Dockerfile .
+    -   docker build -t <image_name:tag> -f src/Dockerfile .
 
     Note: Navigate to parent  folder i.e checkout_system_git then execute above command.
 
