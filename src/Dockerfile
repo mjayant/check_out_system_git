@@ -1,8 +1,8 @@
-FROM python:alpine3.7
+FROM python:3.7-slim
 MAINTAINER "Jayant Mishra"
-COPY . /checkout_system
-WORKDIR /checkout_system
-ENV PYTHONPATH /checkout_system
-RUN pip install -r requirements.txt
+COPY . /check_out_system_git
+WORKDIR /check_out_system_git
+ENV PYTHONPATH /check_out_system_git
+RUN pip install -r src/requirements.txt
 ENTRYPOINT [ "python" ]
-CMD [ "app.py" ]
+CMD [ "src/app.py" ]

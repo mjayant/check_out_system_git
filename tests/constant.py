@@ -1,3 +1,5 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 PROMO_FUNCT_MAP = {'BOGO': 'check_bogo_cd', 'APPL':'check_appl_cd', 'CHMK': 'check_cmnk_cd', 'APOM': 'check_apom_cd'}
 PRICE_PRODUCT_MAP = {'CH1':3.11 , 'AP1': 6.00 , 'CF1': 11.23, 'MK1':4.75, 'OM1':3.69}
 

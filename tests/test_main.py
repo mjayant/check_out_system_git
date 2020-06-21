@@ -1,7 +1,9 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 """
 Unit tests for job api
 """
-
+# coding=utf8
 from unittest import TestCase, mock
 import unittest
 import requests

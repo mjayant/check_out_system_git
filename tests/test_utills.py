@@ -1,13 +1,18 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 """
 Unit tests for job api
 """
-
+# coding=utf8
 from unittest import TestCase, mock
 import unittest
 import requests
+import logging
 from src.main import create_app
 from tests import constant
 from src  import utills
+
+_log = logging.getLogger(__name__)
 
 
 class TestJobs(TestCase):
@@ -28,6 +33,7 @@ class TestJobs(TestCase):
         Total price expected: 16.61
         :return:
         """
+        _log.info("Executing test_job_api_add_product_in_cart_first test case")
         final_dict = {}
         total_item_dict = {}
         quant_cd_map = constant.DATA_FOR_FIRST_TEST_CASE

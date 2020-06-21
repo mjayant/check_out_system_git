@@ -1,4 +1,7 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 """Flask config."""
+
 #import os
 from os import environ, path
 from dotenv import load_dotenv

@@ -1,6 +1,9 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 """
 Loading src folder
 """
+
 import sys
 import os
 

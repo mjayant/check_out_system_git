@@ -1,8 +1,11 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
 # import sys
 # import os
 # sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 # sys.path.append(os.path.dirname(__file__))
 # print(sys.path)
+
 
 from flask import Flask , render_template, request, url_for, flash, redirect, make_response
 from models import db, Product
