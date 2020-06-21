@@ -1,5 +1,10 @@
 
 {% block content %}
+{% if condition %}
+          <li>
+           <a href="/">Home</a>
+       </li>
+{% endif %}
 <table align="center" cellpadding="2" cellspacing="2" border="0">
    {% for key, value in total_item_dict.items() %}
 

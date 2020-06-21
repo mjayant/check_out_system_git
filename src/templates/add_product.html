@@ -1,6 +1,10 @@
         {% extends 'base.html' %}
 {% block content %}
+                <li>
+           <a href="/">Home</a>
+       </li>
 <h1>{% block title %} Add New Product {% endblock %}</h1>
+
 <script src="{{url_for('static', filename='JS/jquery.min.js')}}"></script>
 <script type="text/javascript">
         $(document).ready(function(){

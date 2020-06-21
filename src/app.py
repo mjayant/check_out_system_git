@@ -103,7 +103,7 @@ def add_product_in_cart():
         final_price = disc_price + total_price
         final_price = float("{:.2f}".format(final_price))
         return render_template('get_bill.html', final_price=final_price, disc_price=disc_price, \
-                               apply_cd_dict=apply_cd_dict, total_price=total_price, total_item_dict=total_item_dict)
+                               apply_cd_dict=apply_cd_dict, total_price=total_price, total_item_dict=total_item_dict, condition=True)
 
     context = Product.query.all()[0:10]
     return render_template('show_product_for_cart.html', context=context)
@@ -168,7 +168,7 @@ def get_bill():
     final_price = float("{:.2f}".format(final_price))
 
     return render_template('get_bill.html', final_price=final_price, disc_price=disc_price,\
-                           apply_cd_dict=apply_cd_dict, total_price=total_price, total_item_dict=total_item_dict)
+                           apply_cd_dict=apply_cd_dict, total_price=total_price, total_item_dict=total_item_dict, condition=False)
 
 
 if __name__ == "__main__":
