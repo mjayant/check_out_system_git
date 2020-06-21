@@ -50,7 +50,8 @@ def add_product():
                 db.session.add(new_product)  # Adds new User record to database
                 db.session.commit()
             log.debug("Product added successfully")
-            return make_response(f"{new_product} successfully created!")
+            return render_template('add_prd_success_page.html')
+            #return make_response(f"{new_product} successfully created!")
 
         return render_template('add_product.html')
 
@@ -124,7 +125,7 @@ def delete(id):
             db.session.delete(del_obj)
             db.session.commit()
             log.debug("successfully deleted")
-            return make_response("{} successfully deleted!".format(val))
+            return render_template('del_prd_success_page.html')
         else:
             return 'Error deleting #{id}'.format(id=id)
     except SQLAlchemyError as e:

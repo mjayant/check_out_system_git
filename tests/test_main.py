@@ -92,7 +92,7 @@ class TestJobs(TestCase):
 
         response = requests.post("http://127.0.0.1:5000/add_product", data=data)
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.text, '<Product vv> successfully created!')
+        self.assertIn('Product successfully created!', response.text)
 
 
     def test_delete_product(self):
@@ -104,7 +104,7 @@ class TestJobs(TestCase):
         #prd_cd = 'v1'
         response = requests.post("http://127.0.0.1:5000/delete/vv")
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.text, '<Product vv> successfully deleted!')
+        self.assertIn('successfully deleted!', response.text)
 
     def test_neg_delete_product(self):
         """
