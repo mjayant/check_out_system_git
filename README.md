@@ -115,7 +115,8 @@ Open browser and type the below url:
 
 Unittest:
 -----------
-
+Before executing test cases make sure checkout_system app’s container is up and running.
+Follow below step:
 1) Run docker ps  command in your terminal
 2) Copy container id 
 3) run command: docker exec -it <container_id> pytest -s -v
