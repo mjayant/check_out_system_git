@@ -104,7 +104,7 @@ i) Navigate to src folder and execute below command-
 
 ii) Start the development server
 
-    - python3 <to_Do>
+    - python app.py
 
 
 Open browser and type the below url:
