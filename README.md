@@ -122,7 +122,7 @@ Follow below step:
 3) run command: docker exec -it <container_id> pytest -s -v
 
 Or you can test locally 
-1) Navigate parent folder i.e check_out_system_git or <other_folder_name>(if you have cloned using this command: git clone https://github.com/mjayant/check_out_system_git.git <other_folder_name>
+1) Navigate parent folder i.e check_out_system_git or <other_folder_name>(if you have cloned using this command: git clone https://github.com/mjayant/check_out_system_git.git <other_folder_name>)
 2) Start server using: python src/app.py
 3)  Then run command : pytest -s -v
 
