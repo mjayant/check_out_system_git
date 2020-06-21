@@ -116,9 +116,9 @@ Open browser and type the below url:
 Unittest:
 -----------
 
-Run docker ps  command in your terminal
-Copy container id 
-and run command: docker exec -it <container_id> pytest -s -v
+1) Run docker ps  command in your terminal
+2) Copy container id 
+3) run command: docker exec -it <container_id> pytest -s -v
 
 Coverage Report:
 ------------
