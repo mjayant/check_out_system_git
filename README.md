@@ -13,7 +13,7 @@ There are 4 API
 4) /delete/<prd_cd>
 
 Below is explanation of each API.
-We can redirect each api from home page as well i.e  http://127.0.0.1:5000 .
+We can redirect to each api from home page as well i.e  http://127.0.0.1:5000 .
 
 1) /add_product :
 	This API is for adding products.
